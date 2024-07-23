@@ -12,7 +12,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      TMDB: process.env.APEX_TRACKER_API_KEY
+      APEX_TRACKER_API_KEY: process.env.APEX_TRACKER_API_KEY
     }
   },  
 
