@@ -17,13 +17,13 @@ const handleSubmit = async () => {
   searching.value = true;
 
   try {
+    const apex_API = this.$config.public.APEX_TRACKER_API_KEY;
     const { data } = await useFetch(
-      `https://api.mozambiquehe.re/bridge?player=${playersName}&platform=${playersPlatform}&auth=1beef21d1e433b19856e21f9f8399790`
+      `https://api.mozambiquehe.re/bridge?player=${playersName}&platform=${playersPlatform}&auth=${apex_API}`
     );
     console.log("Fetched Data:", data.value);
     searching.value = false;
     if (data) {
-      console.log("this is getting called");
       seasonInfomation.value = []; // Clear previous data
       for (const key in data.value.total) {
         const seasonRegex = /wins_season_(\d+)/;
