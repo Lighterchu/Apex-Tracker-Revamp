@@ -17,7 +17,8 @@ const handleSubmit = async () => {
   searching.value = true;
 
   try {
-    const apex_API = this.$config.public.APEX_TRACKER_API_KEY;
+    const config = useRuntimeConfig();
+    const apex_API = config.public.APEX_TRACKER_API_KEY;
     const { data } = await useFetch(
       `https://api.mozambiquehe.re/bridge?player=${playersName}&platform=${playersPlatform}&auth=${apex_API}`
     );
