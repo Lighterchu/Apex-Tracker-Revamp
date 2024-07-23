@@ -10,5 +10,12 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    public: {
+      TMDB: process.env.APEX_TRACKER_API_KEY
+    }
+  },  
+
+
   compatibilityDate: '2024-07-15',
 })
