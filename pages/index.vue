@@ -49,7 +49,7 @@ const handleSubmit = async () => {
       legendPlayer: data.value.legends.selected.ImgAssets.icon,
       legend: data.value.legends.selected.LegendName,
       seasonData: seasonInfomation.value,
-      legendBanner: data.value.legends.selected.ImgAssets.banner
+      legendBanner: data.value.legends.selected.ImgAssets.banner,
     };
 
     playersInfomation.value = [...playersInfomation.value, newPlayerInfo];
@@ -65,7 +65,7 @@ const handleSubmit = async () => {
 
 <template>
   <div
-    class="bg-red-900 bg pt-2 h-full bg-[url('/assets/apex.jpeg')] items-center justify-center bg-no-repeat bg-center bg-cover"
+    class="pt-2 h-full bg-[url('/assets/apex.jpeg')]  items-center justify-center bg-no-repeat bg-center bg-cover"
   >
     <div class="bg-black w-2/4 mx-auto p-6">
       <h1 class="text-white text-center text-2xl font-bold mb-6">
@@ -104,12 +104,13 @@ const handleSubmit = async () => {
 
         <button
           type="submit"
-          class="w-full  bg-indigo-600  text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          class="w-full bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           Submit
         </button>
       </form>
     </div>
+
     <div
       v-if="noFoundPlayer"
       class="bg-pink-500 w-1/4 p-10 rounded-xl mt-5 flex justify-center mx-auto"
@@ -122,10 +123,19 @@ const handleSubmit = async () => {
     >
       <h1 class="animate-bounce">Searching Player...</h1>
     </div>
-    <div v-if="playersInfomation.length">
-      <playerinfo :playerInfo="playersInfomation[0]" />
-    </div>
-  </div>
+    <!-- Your new section starts here -->
+    <section class=" mt-80 lg:mt-72 md:mt-20 sm:mt-10 h-2/4 lg:h-2/4 md:h-full sm:h-full pl-5   bg-gray-800 text-white rounded-lg">
+      <h2 class="text-xl font-bold mb-4">Players Information</h2>
+      <p>If Information is available, information will display here.</p>
+      <div class="">
+        <div v-if="playersInfomation.length">
+          <playerinfo :playerInfo="playersInfomation[0]" />
+        </div>
+      </div>
+    </section>
+    <!-- Your new section ends here -->
+    <footer class="fixed bottom-0 h-2 left-0 w-full flex justify-center bg-red-500 pb-5">
+      © Lighterchu
+    </footer>
+ </div>
 </template>
-
-

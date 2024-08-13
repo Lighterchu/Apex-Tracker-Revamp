@@ -1,5 +1,5 @@
 <template>
-  <div class=" w-2/4 mx-auto w-4/5 mt-60 p-6 rounded-lg">
+  <div class=" w-4/5 m-auto mt-2 rounded-lg">
     <div class="bg-indigo-600 rounded-xl p-2">
       <div class="flex justify-center">
         <h1>Player Information</h1>
